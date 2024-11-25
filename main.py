@@ -3,8 +3,30 @@ import sys
 import hashlib
 
 
+print("Starting... ")
+
+
+def main():
+    userConfig = input("File name or path? (n/p, case insensitive. You can also type [ex]it to exit the program) ").lower()
+    if userConfig == "n":
+        userPath = os.path.dirname(os.path.abspath(sys.argv[0]))
+        print("Current directory = " + userPath)
+        userFile = input("Input file name: ")
+        filePath = userPath + "/" + userFile
+        print(hash_file(filePath))
+    elif userConfig == "p":
+        filePath = input("Input file path: ")
+        print(hash_file(filePath))
+    elif userConfig == "ex" or userConfig == "exit":
+        sys.exit("Exiting Program...")
+    else:
+        print("Input not accepted. Starting again...")
+        main()
+
+
 def hash_file(filePath):
     h1 = hashlib.sha1()
+    h224 = hashlib.sha224()
     h384 = hashlib.sha384()
     h256 = hashlib.sha256()
     h512 = hashlib.sha512()
@@ -13,27 +35,11 @@ def hash_file(filePath):
         while chunk != b'':
             chunk = file.read(1024)
             h1.update(chunk)
+            h224.update(chunk)
             h384.update(chunk)
             h256.update(chunk)
             h512.update(chunk)
-    return  "Sha1: " + h1.hexdigest() + "\nSha384: " + h384.hexdigest() + "\nSha256: " + h256.hexdigest() + "\nSha512: " + h512.hexdigest()
+    return "Sha1:   " + h1.hexdigest() + "\nSha224: " + h224.hexdigest() + "\nSha384: " + h384.hexdigest() + "\nSha256: " + h256.hexdigest() + "\nSha512: " + h512.hexdigest()
 
 
-def main():
-    if userConfigFile == "n":
-        userPath = os.path.dirname(os.path.abspath(sys.argv[0]))
-        print("Current directory = " + userPath)
-        userFile = input("Input file name: ")
-        filePath = userPath + "/" + userFile
-        print(hash_file(filePath))
-    elif userConfigFile == "p":
-        filePath = input("Input file path: ")
-        print(hash_file(filePath))
-    else:
-        print("Input not accepted. Starting again...")
-        main()
-
-
-print("Starting... ")
-userConfigFile = input("File name or path? (n/p, case insensitive) ").lower()
 main()
