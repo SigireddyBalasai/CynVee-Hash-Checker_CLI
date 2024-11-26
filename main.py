@@ -27,8 +27,8 @@ def main():
 def hash_file(filePath):
     h1 = hashlib.sha1()
     h224 = hashlib.sha224()
-    h384 = hashlib.sha384()
     h256 = hashlib.sha256()
+    h384 = hashlib.sha384()
     h512 = hashlib.sha512()
     with open(filePath, 'rb') as file:
         chunk = 0
@@ -36,10 +36,10 @@ def hash_file(filePath):
             chunk = file.read(1024)
             h1.update(chunk)
             h224.update(chunk)
-            h384.update(chunk)
             h256.update(chunk)
+            h384.update(chunk)
             h512.update(chunk)
-    return "Sha1:   " + h1.hexdigest() + "\nSha224: " + h224.hexdigest() + "\nSha384: " + h384.hexdigest() + "\nSha256: " + h256.hexdigest() + "\nSha512: " + h512.hexdigest()
+    return "Sha1:   " + h1.hexdigest() + "\nSha224: " + h224.hexdigest() + "\nSha256: " + h256.hexdigest() + "\nSha384: " + h384.hexdigest() + "\nSha512: " + h512.hexdigest()
 
 
 main()
