@@ -9,13 +9,21 @@ print("Starting... ")
 def main():
     user_config = input("File name or path? (n/p, case insensitive. You can also type [ex]it to exit the program) ").lower()
     if user_config == "n":
-        user_path = os.path.dirname(os.path.abspath(sys.argv[0]))
+        user_path = os.getcwd()
         print("Current directory = " + user_path)
         user_file = input("Input file name: ")
-        file_path = user_path + "/" + user_file
-        print(hash_file(file_path))
+        if os.path.isfile(user_path + "/" + user_file):
+            file_path = user_path + "/" + user_file
+            print(hash_file(file_path))
+        else:
+            print("File not found")
     elif user_config == "p":
-        file_path = input("Input file path: ")
+        user_file = input("Input file path: ")
+        if os.path.isfile(user_file):
+            file_path = user_file
+            print(hash_file(file_path))
+        else:
+            print("File not found")
         print(hash_file(file_path))
     elif user_config == "ex" or user_config == "exit":
         sys.exit("Exiting Program...")
@@ -25,36 +33,44 @@ def main():
 
 
 def hash_file(file_path):
-    h1 = hashlib.sha1()
-    h224 = hashlib.sha224()
-    h256 = hashlib.sha256()
-    h384 = hashlib.sha384()
-    h512 = hashlib.sha512()
-    h3_224 = hashlib.sha3_224()
-    h3_256 = hashlib.sha3_256()
-    h3_384 = hashlib.sha3_384()
-    h3_512 = hashlib.sha3_512()
-    m5 = hashlib.md5()
-    b2b = hashlib.blake2b()
-    b2s = hashlib.blake2s()
+    hash_list = [
+        hashlib.sha1(),
+        hashlib.sha224(),
+        hashlib.sha256(),
+        hashlib.sha384(),
+        hashlib.sha512(),
+        hashlib.sha3_224(),
+        hashlib.sha3_256(),
+        hashlib.sha3_384(),
+        hashlib.sha3_512(),
+        hashlib.md5(),
+        hashlib.blake2b(),
+        hashlib.blake2s()
+    ]
+    hash_name_array = [
+        "SHA1: ",
+        "SHA224: ",
+        "SHA256: ",
+        "SHA384: ",
+        "SHA512: ",
+        "SHA3_224: ",
+        "SHA3_256: ",
+        "SHA3_384: ",
+        "SHA3_512: ",
+        "MD5: ",
+        "BLAKE2b: ",
+        "BLAKE2s: "
+    ]
     with open(file_path, 'rb') as file:
         chunk = 0
         while chunk != b'':
             chunk = file.read(1024)
-            h1.update(chunk)
-            h224.update(chunk)
-            h256.update(chunk)
-            h384.update(chunk)
-            h512.update(chunk)
-            h3_224.update(chunk)
-            h3_256.update(chunk)
-            h3_384.update(chunk)
-            h3_512.update(chunk)
-            m5.update(chunk)
-            b2b.update(chunk)
-            b2s.update(chunk)
-    return "SHA1:     " + h1.hexdigest() + "\nSHA224:   " + h224.hexdigest() + "\nSHA256:   " + h256.hexdigest() + "\nSHA384:   " + h384.hexdigest() + "\nSHA512:   " + h512.hexdigest() + "\nSHA3_224: " + h3_224.hexdigest() + "\nSHA3_256: " + h3_256.hexdigest() + "\nSHA3_384: " + h3_384.hexdigest() + "\nSHA3_512: " + h3_512.hexdigest() + "\nMD5:      " + m5.hexdigest() + "\nBLAKE2b:  " + b2b.hexdigest() + "\nBLAKE2s:  " + b2s.hexdigest()
-
+            for h in hash_list:
+                h.update(chunk)
+    hash_name_iter = iter(hash_name_array)
+    for x in hash_list:
+        next_hash_name = next(hash_name_iter)
+        print(next_hash_name + x.hexdigest())
 
 
 main()
