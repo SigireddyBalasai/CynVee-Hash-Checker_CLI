@@ -26,7 +26,6 @@ def file_config():
         print("File not found")
 
 
-
 def path_config():
     user_file = input("Input file path: ")
     if os.path.isfile(user_file):
@@ -78,10 +77,11 @@ def hash_file(file_path):
         print(next_hash_name + x.hexdigest())
     sys.exit("Finished")
 
+
 try:
-    if sys.argv[1] == "-n" or "--name":
+    if sys.argv[1] == "-n" or sys.argv[1] == "--name":
         file_config()
-    elif sys.argv[1] == "-p" or "--path":
+    elif sys.argv[1] == "-p" or sys.argv[1] == "--path":
         path_config()
-except:
+except IndexError:
     main()
