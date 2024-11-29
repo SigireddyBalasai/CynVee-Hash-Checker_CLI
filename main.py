@@ -3,36 +3,41 @@ import sys
 import hashlib
 
 
-print("Starting... ")
-
-
 def main():
     user_config = input("File name or path? (n/p, case insensitive. You can also type [ex]it to exit the program) ").lower()
     if user_config == "n":
-        user_path = os.getcwd()
-        print("Current directory = " + user_path)
-        user_file = input("Input file name: ")
-        if os.path.isfile(user_path + "/" + user_file):
-            file_path = user_path + "/" + user_file
-            print(hash_file(file_path))
-        else:
-            print("File not found")
+        file_config()
     elif user_config == "p":
-        user_file = input("Input file path: ")
-        if os.path.isfile(user_file):
-            file_path = user_file
-            print(hash_file(file_path))
-        else:
-            print("File not found")
-        print(hash_file(file_path))
+        path_config()
     elif user_config == "ex" or user_config == "exit":
         sys.exit("Exiting Program...")
     else:
-        print("Input not accepted. Starting again...")
-        main()
+        print("Input not accepted")
+
+
+def file_config():
+    user_path = os.getcwd()
+    print("Current directory = " + user_path)
+    user_file = input("Input file name: ")
+    if os.path.isfile(user_path + "/" + user_file):
+        file_path = user_path + "/" + user_file
+        print(hash_file(file_path))
+    else:
+        print("File not found")
+
+
+
+def path_config():
+    user_file = input("Input file path: ")
+    if os.path.isfile(user_file):
+        file_path = user_file
+        print(hash_file(file_path))
+    else:
+        print("File not found")
 
 
 def hash_file(file_path):
+    print("Starting...")
     hash_list = [
         hashlib.sha1(),
         hashlib.sha224(),
@@ -47,7 +52,7 @@ def hash_file(file_path):
         hashlib.blake2b(),
         hashlib.blake2s()
     ]
-    hash_name_array = [
+    hash_name_list = [
         "SHA1: ",
         "SHA224: ",
         "SHA256: ",
@@ -67,10 +72,16 @@ def hash_file(file_path):
             chunk = file.read(1024)
             for h in hash_list:
                 h.update(chunk)
-    hash_name_iter = iter(hash_name_array)
+    hash_name_iter = iter(hash_name_list)
     for x in hash_list:
         next_hash_name = next(hash_name_iter)
         print(next_hash_name + x.hexdigest())
+    sys.exit("Finished")
 
-
-main()
+try:
+    if sys.argv[1] == "-n" or "--name":
+        file_config()
+    elif sys.argv[1] == "-p" or "--path":
+        path_config()
+except:
+    main()
