@@ -1,6 +1,7 @@
 import os
 import sys
 import hashlib
+import timeit
 
 
 def main():
@@ -38,6 +39,7 @@ def path_config():
 
 def hash_file(file_path):
     print("Starting...")
+    start_time = timeit.default_timer()
     hash_list = [
         hashlib.sha1(),
         hashlib.sha224(),
@@ -79,6 +81,9 @@ def hash_file(file_path):
         full_hash = next_hash_name + x.hexdigest()
         print(next_hash_name + x.hexdigest())
         full_hash_list.append(full_hash)
+    end_time = timeit.default_timer()
+    print("Finished")
+    print("Process completed in approximately: " + str(end_time - start_time) + " seconds")
     create = input("Create a .txt file with the hashes at current working directory? (y/n): ").lower()
     if create == "y":
         name = input("Write the name of the file (if there is a .txt file of the same name in the directory, it will likely be overwritten!): ")
