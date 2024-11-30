@@ -10,7 +10,8 @@ def main():
     elif user_config == "p":
         path_config()
     elif user_config == "ex" or user_config == "exit":
-        sys.exit("Exiting Program...")
+        print("Exiting Program...")
+        sys.exit(0)
     else:
         print("Input not accepted")
 
@@ -88,7 +89,7 @@ def hash_file(file_path):
         print("Created file: " + f.name)
     else:
         print("File not created")
-    sys.exit("Finished")
+    sys.exit(0)
 
 
 try:
