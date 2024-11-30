@@ -33,5 +33,5 @@ There may be more ways of doing it, so feel free to use what works for you
 
 -p or --path will skip the first prompt and go straight to asking for the file path
 
-### Create .txt file with hashes
+### Create .txt file with hashes:
 Once the program has finished generating the hashes, it should prompt you to optionally save a .txt file with the hashes stored inside. If you accept, it should prompt you to name said .txt file. It will save the file in the current working directory. If there already a .txt file of the same name in the directory, it will likely be overwritten by the program, so be careful what you name it!
