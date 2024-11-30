@@ -72,9 +72,22 @@ def hash_file(file_path):
             for h in hash_list:
                 h.update(chunk)
     hash_name_iter = iter(hash_name_list)
+    full_hash_list = []
     for x in hash_list:
         next_hash_name = next(hash_name_iter)
+        full_hash = next_hash_name + x.hexdigest()
         print(next_hash_name + x.hexdigest())
+        full_hash_list.append(full_hash)
+    create = input("Create a .txt file with the hashes at current directory? (y/n): ").lower()
+    if create == "y":
+        name = input("Write the name of the file: ")
+        with open(name + ".txt", "w") as f:
+            f.write("Hashes for file: " + file_path + "\n")
+            for x in full_hash_list:
+                f.write(x + "\n")
+        print("Created file: " + f.name)
+    else:
+        print("File not created")
     sys.exit("Finished")
 
 
@@ -83,5 +96,7 @@ try:
         file_config()
     elif sys.argv[1] == "-p" or sys.argv[1] == "--path":
         path_config()
+    else:
+        main()
 except IndexError:
     main()
