@@ -30,6 +30,7 @@ There may be more ways of doing it, so feel free to use what works for you
 
 ### Arguments:
 -n or --name will skip the first prompt and go straight to asking for the file name (from your current working directory)
+
 -p or --path will skip the first prompt and go straight to asking for the file path
 
 ### Create .txt file with hashes
