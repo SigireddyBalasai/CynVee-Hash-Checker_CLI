@@ -79,9 +79,9 @@ def hash_file(file_path):
         full_hash = next_hash_name + x.hexdigest()
         print(next_hash_name + x.hexdigest())
         full_hash_list.append(full_hash)
-    create = input("Create a .txt file with the hashes at current directory? (y/n): ").lower()
+    create = input("Create a .txt file with the hashes at current working directory? (y/n): ").lower()
     if create == "y":
-        name = input("Write the name of the file: ")
+        name = input("Write the name of the file (if there is a .txt file of the same name in the directory, it will likely be overwritten!): ")
         with open(name + ".txt", "w") as f:
             f.write("Hashes for file: " + file_path + "\n")
             for x in full_hash_list:
