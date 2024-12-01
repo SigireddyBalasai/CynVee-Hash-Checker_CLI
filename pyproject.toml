@@ -2,7 +2,10 @@
 name = "cynvee_hash_checker"
 version = "0.1.0"
 description = "A project for file configuration and hashing"
-authors = ["Sigireddy Balasai <SigireddyBalasai@gmail.com>"]
+authors = [
+    "Sigireddy Balasai <SigireddyBalasai@gmail.com>",
+    "Ella Hart (Cyncrovee)",
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"
