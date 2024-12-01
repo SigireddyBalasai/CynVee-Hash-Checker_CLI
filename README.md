@@ -22,9 +22,9 @@ You can find the GUI version here: https://github.com/Cyncrovee/CynVee-Hash-Chec
 - Python installed on your system (if it's not working, try upgrading your version of Python and/or adding Python to your PATH)
 
 ### Running:
-To use, simply download the main.py file, then open a terminal and cd into the directory you saved main.py and run like so:
+To use, simply download the directory then open a terminal and use 
 ```
-python main.py
+python cynvee_hash_checker
 ```
 There may be more ways of doing it, so feel free to use what works for you
 
