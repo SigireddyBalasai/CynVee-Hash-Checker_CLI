@@ -9,7 +9,7 @@ import questionary as qy
 
 def hash_file(file_path):
     """
-    Computes multiple hash values for a given file and optionally writes them
+    Computes hash values chosen by the user for a given file and optionally writes them
     to a text file.
 
     Args:
@@ -60,7 +60,7 @@ def hash_file(file_path):
     ]
     hash_list = []
     choice_list = qy.checkbox(
-        "Select hashing methods:",
+        "Select hashing method(s):",
         choices=hash_name_list,
     ).ask()
 
