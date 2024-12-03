@@ -17,7 +17,7 @@ def path_config():
     and prints its hash.
     If the file does not exist, it prints "File not found".
     """
-    user_file = input("Input file path: ")
+    user_file = input("Input file path (does NOT support tab completion): ")
     if os.path.isfile(user_file):
         print(hash_file(file_path=user_file))
     else:
