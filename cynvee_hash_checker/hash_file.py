@@ -104,6 +104,6 @@ def hash_file(file_path):
     else:
         print("File not created")
     
-    qy.press_any_key_to_continue(
+    return qy.press_any_key_to_continue(
         "Press any key to continue (ends program)"
     ).ask()
