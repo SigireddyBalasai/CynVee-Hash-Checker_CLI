@@ -42,8 +42,6 @@ def hash_file(file_path):
     Example:
         hash_file('example.txt')
     """
-    print("Starting...")
-    start_time = timeit.default_timer()
     hash_name_list = [
         "sha1",
         "sha224",
@@ -63,7 +61,8 @@ def hash_file(file_path):
         "Select hashing method(s):",
         choices=hash_name_list,
     ).ask()
-
+    print("Starting...")
+    start_time = timeit.default_timer()
     for c in choice_list:
         hash_list.append("hashlib." + c + "()")
     with open(file_path, 'rb') as file:
@@ -83,18 +82,18 @@ def hash_file(file_path):
         print(next_choice_name + ": " + eval(h).hexdigest())
     
     end_time = timeit.default_timer()
-    print("Finished")
     print("Process completed in approximately: " + str(end_time - start_time) + " seconds")
 
 
-    create = input(
-        "Create a .txt file with the hashes at current "
-        "working directory? (y/n): "
-    ).lower()
-    if create == "y":
+    create = qy.confirm(
+        "Create a .txt file with the hashes at current working directory? (defaults to No)",
+        default=False,
+        auto_enter=False
+    ).ask()
+    if create:
         name = input(
             "Write the name of the file (if there is a .txt file"
-            "of the same name in the directory, "
+            " of the same name in the directory, "
             "it will likely be overwritten!): "
         )
         with open(name + ".txt", "w") as f:
@@ -104,3 +103,7 @@ def hash_file(file_path):
         print("Created file: " + f.name)
     else:
         print("File not created")
+    
+    qy.press_any_key_to_continue(
+        "Press any key to continue (ends program)"
+    ).ask()
