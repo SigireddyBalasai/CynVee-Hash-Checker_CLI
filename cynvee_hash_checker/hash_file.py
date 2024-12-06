@@ -2,9 +2,11 @@
 This module provides a function to compute multiple hash values for a file.
 """
 
+import os
 import hashlib
 import timeit
 import questionary as qy
+from tqdm import tqdm
 
 
 def hash_file(file_path):
@@ -63,12 +65,16 @@ def hash_file(file_path):
     ).ask()
     print("Starting...")
     start_time = timeit.default_timer()
+    file_size = os.path.getsize(file_path)
     for c in choice_list:
         hash_list.append("hashlib." + c + "()")
     with open(file_path, 'rb') as file:
+        pbar = tqdm(total=file_size, desc="Processing", unit=" Bytes")
         while True:
             chunk = file.read(1024)
+            pbar.update(1024)
             if not chunk:
+                pbar.close()
                 break
             for h in hash_list:
                 eval(h).update(chunk)

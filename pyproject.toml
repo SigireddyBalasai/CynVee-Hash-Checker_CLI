@@ -5,7 +5,7 @@ description = "A project for file configuration and hashing"
 license = "MIT"
 authors = [
     "Sigireddy Balasai <SigireddyBalasai@gmail.com>",
-    "Ella Hart (Cyncrovee)",
+    "Ella Hart AKA Cyncrovee",
 ]
 readme = "README.md"
 repository = "https://github.com/Cyncrovee/CynVee-Hash-Checker_CLI"
@@ -13,6 +13,7 @@ repository = "https://github.com/Cyncrovee/CynVee-Hash-Checker_CLI"
 [tool.poetry.dependencies]
 python = "^3.8"
 questionary = "^2.0.1"
+tqdm = "^4.67.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
