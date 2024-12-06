@@ -5,5 +5,7 @@ poetry.lock
 pyvenv.cfg
 .vscode/
 Include/
-Lib/
+[L/l]ib/
+bin/
 Scripts/
+lib64
