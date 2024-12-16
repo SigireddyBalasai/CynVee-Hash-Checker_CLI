@@ -11,12 +11,18 @@ readme = "README.md"
 repository = "https://github.com/Cyncrovee/CynVee-Hash-Checker_CLI"
 
 [tool.poetry.dependencies]
-python = "^3.8"
+python = "^3.9"
 questionary = "^2.0.1"
 tqdm = "^4.67.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2"
+
+[tool.poetry.group.dev.dependencies]
+mkdocs = "^1.6.1"
+mkdocs-material = "^9.5.49"
+mkdocstrings-python = "^1.12.2"
+markdown-exec = "^1.10.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
