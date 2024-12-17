@@ -4,9 +4,9 @@ This guide will help you install and set up the CLI version of CynVee-Hash-Check
 
 ## Requirements:
 - Python installed on your system. If it's not working, try upgrading your version of Python and/or adding Python to your PATH.
-- The `questionary` Python package, which can be installed via pip:
+- The `questionary` and `tqdm` Python packages, which can be installed via pip:
     ```sh
-    pip install questionary
+    pip install questionary tqdm
     ```
 
 ## Installation Steps:
@@ -21,7 +21,7 @@ This guide will help you install and set up the CLI version of CynVee-Hash-Check
 3. **Install Dependencies:**
      Ensure you have the required Python package installed:
      ```sh
-     pip install questionary
+     pip install questionary tqdm
      ```
 
 ## Running the Program:
