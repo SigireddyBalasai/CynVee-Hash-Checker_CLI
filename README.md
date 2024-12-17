@@ -20,9 +20,9 @@ You can find the GUI version here: https://github.com/Cyncrovee/CynVee-Hash-Chec
 ## Usage:
 ### Requirements:
 - Python installed on your system (if it's not working, try upgrading your version of Python and/or adding Python to your PATH)
-- The questionary python package, which can be installed via pip:
+- The questionary and tqdm python packages, which can be installed via pip:
 ```
-pip install questionary
+pip install questionary tqdm
 ```
 
 ### Running:
