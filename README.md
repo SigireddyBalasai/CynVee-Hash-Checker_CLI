@@ -1,5 +1,7 @@
 # CynVee-Hash-Checker (CLI)
 
+## Documentation: https://cyncrovee.github.io/CynVee-Hash-Checker_CLI/
+
 The CLI version of CynVee-Hash-Checker, written in Python.
 You can find the GUI version here: https://github.com/Cyncrovee/CynVee-Hash-Checker
 
