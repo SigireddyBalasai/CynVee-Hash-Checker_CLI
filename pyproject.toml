@@ -1,5 +1,5 @@
 [project]
-name = "verdict-hasher"
+name = "verdict_hasher"
 version = "0.1.0"
 description = "A project for file configuration and hashing"
 license = "MIT"
