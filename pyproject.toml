@@ -26,5 +26,5 @@ mkdocstrings-python = "1.12.2"
 markdown-exec = "1.10.0"
 
 [build-system]
-requires = ["poetry-core2.0.0"]
+requires = ["poetry-core==2.0.0"]
 build-backend = "poetry.core.masonry.api"
