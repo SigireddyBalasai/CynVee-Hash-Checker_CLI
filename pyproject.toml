@@ -15,7 +15,7 @@ dependencies = [
 ]
 
 [project.scripts]
-verdict_hasher = "verdict_hasher"
+verdict_hasher = "verdict_hasher.__main__"
 
 [project.urls]
 repository = "https://github.com/Cyncrovee/verdict-hasher"
