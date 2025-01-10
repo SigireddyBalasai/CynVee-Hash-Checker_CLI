@@ -14,9 +14,6 @@ dependencies = [
     "tqdm==4.67.1"
 ]
 
-[project.scripts]
-verdict_hasher = "verdict_hasher.__main__"
-
 [project.urls]
 repository = "https://github.com/Cyncrovee/verdict-hasher"
 documentation = "https://cyncrovee.github.io/verdict-hasher/"
