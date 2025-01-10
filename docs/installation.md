@@ -1,6 +1,6 @@
 # Installation Guide
 
-This guide will help you install and set up the CLI version of CynVee-Hash-Checker.
+This guide will help you install and set up the verdict-hasher.
 
 ## Requirements:
 - Python installed on your system. If it's not working, try upgrading your version of Python and/or adding Python to your PATH.
@@ -16,7 +16,7 @@ This guide will help you install and set up the CLI version of CynVee-Hash-Check
      ```
 2. **Navigate to the Directory:**
      ```sh
-     cd CynVee-Hash-Checker
+     cd verdict-hasher
      ```
 3. **Install Dependencies:**
      Ensure you have the required Python package installed:
@@ -27,7 +27,7 @@ This guide will help you install and set up the CLI version of CynVee-Hash-Check
 ## Running the Program:
 To use the CLI, open a terminal and run:
 ```sh
-python cynvee_hash_checker
+python verdict-hasher
 ```
 There may be more ways of doing it, so feel free to use what works for you.
 

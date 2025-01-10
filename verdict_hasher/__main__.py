@@ -1,5 +1,5 @@
 """
-Main entry point for the CynVee-Hash-Checker CLI.
+Main entry point for verdict_hasher.
 """
 
 import sys

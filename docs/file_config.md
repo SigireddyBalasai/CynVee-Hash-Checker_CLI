@@ -1,1 +1,1 @@
-:::cynvee_hash_checker.file_config
+:::verdict_hasher.file_config

@@ -1,4 +1,4 @@
-::: cynvee_hash_checker
+::: verdict_hasher
 
 For more information, check out the following documents:
 

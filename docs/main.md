@@ -1,2 +1,2 @@
-:::cynvee_hash_checker.main
-:::cynvee_hash_checker.__main__
+:::verdict_hasher.main
+:::verdict_hasher.__main__
