@@ -1,6 +1,6 @@
 [project]
 name = "verdict_hasher"
-version = "0.1.0"
+version = "0.1.1"
 description = "A project for file configuration and hashing"
 license = "MIT"
 authors = [
@@ -13,6 +13,9 @@ dependencies = [
     "questionary==2.0.1",
     "tqdm==4.67.1"
 ]
+
+[project.scripts]
+verdict_hasher = "verdict_hasher.__main__:start"
 
 [project.urls]
 repository = "https://github.com/Cyncrovee/verdict-hasher"
