@@ -1,29 +1,30 @@
-[tool.poetry]
-name = "cynvee_hash_checker"
+[project]
+name = "verdict-hasher"
 version = "0.1.0"
 description = "A project for file configuration and hashing"
 license = "MIT"
 authors = [
-    "Sigireddy Balasai <SigireddyBalasai@gmail.com>",
-    "Ella Hart AKA Cyncrovee",
+    { name = "Sigireddy Balasai", email = "SigireddyBalasai@gmail.com" },
+    { name = "Ella Hart AKA Cyncrovee", email= "86919717+Cyncrovee@user.noreply.github.com" }
 ]
 readme = "README.md"
-repository = "https://github.com/Cyncrovee/CynVee-Hash-Checker_CLI"
+requires-python = "^3.9"
+dependencies = [
+    "questionary==2.0.1",
+    "tqdm==4.67.1"
+]
 
-[tool.poetry.dependencies]
-python = "^3.9"
-questionary = "^2.0.1"
-tqdm = "^4.67.1"
-
-[tool.poetry.dev-dependencies]
-pytest = "^6.2"
+[project.urls]
+repository = "https://github.com/Cyncrovee/verdict-hasher"
+documentation = "https://cyncrovee.github.io/verdict-hasher/"
 
 [tool.poetry.group.dev.dependencies]
-mkdocs = "^1.6.1"
-mkdocs-material = "^9.5.49"
-mkdocstrings-python = "^1.12.2"
-markdown-exec = "^1.10.0"
+pytest = "6.2"
+mkdocs = "1.6.1"
+mkdocs-material = "9.5.49"
+mkdocstrings-python = "1.12.2"
+markdown-exec = "1.10.0"
 
 [build-system]
-requires = ["poetry-core>=1.0.0"]
+requires = ["poetry-core2.0.0"]
 build-backend = "poetry.core.masonry.api"

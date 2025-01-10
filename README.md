@@ -1,9 +1,8 @@
-# CynVee-Hash-Checker (CLI)
+# verdict-hasher
 
-## Documentation: https://cyncrovee.github.io/CynVee-Hash-Checker_CLI/
+## Documentation: https://cyncrovee.github.io/verdict-hasher/
 
-The CLI version of CynVee-Hash-Checker, written in Python.
-You can find the GUI version here: https://github.com/Cyncrovee/CynVee-Hash-Checker
+An easy-to-use CLI program to check the hashes of files
 
 ## Currently supports:
 - SHA1
@@ -30,7 +29,7 @@ pip install questionary tqdm
 ### Running:
 To use, simply download the directory then open a terminal and use 
 ```
-python cynvee_hash_checker
+python verdict-hasher
 ```
 There may be more ways of doing it, so feel free to use what works for you
 

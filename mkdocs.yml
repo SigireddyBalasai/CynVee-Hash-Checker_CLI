@@ -1,6 +1,6 @@
-site_name: "Cynvee Hash Checker CLI"
+site_name: "verdict-hasher"
 
-repo_url: https://github.com/Cyncrovee/CynVee-Hash-Checker_CLI
+repo_url: https://github.com/Cyncrovee/verdict-hasher
 repo_name: GitHub
 
 theme:
@@ -22,7 +22,7 @@ theme:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/Cyncrovee/CynVee-Hash-Checker_CLI
+      link: https://github.com/Cyncrovee/verdict-hasher
       name: "Star"
       stars: true
 
