@@ -8,15 +8,12 @@ from path_config import path_config
 from main import main
 
 
-def start():
-    try:
-        if sys.argv[1] == "-n" or sys.argv[1] == "--name":
-            file_config()
-        elif sys.argv[1] == "-p" or sys.argv[1] == "--path":
-            path_config()
-        else:
-            main()
-    except IndexError:
+try:
+    if sys.argv[1] == "-n" or sys.argv[1] == "--name":
+        file_config()
+    elif sys.argv[1] == "-p" or sys.argv[1] == "--path":
+        path_config()
+    else:
         main()
-
-start()
+except IndexError:
+    main()
