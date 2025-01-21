@@ -8,4 +8,6 @@ Include/
 [L/l]ib/
 bin/
 Scripts/
+dist/
+site/
 lib64
