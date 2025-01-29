@@ -2,29 +2,26 @@
 name = "verdict_hasher"
 version = "0.1.0"
 description = "A project for file configuration and hashing"
-license = "MIT"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "questionary>=2.1.0",
+    "tqdm>=4.67.1",
+]
 authors = [
     { name = "Sigireddy Balasai", email = "SigireddyBalasai@gmail.com" },
     { name = "Ella Hart AKA Cyncrovee", email= "86919717+Cyncrovee@user.noreply.github.com" }
 ]
-readme = "README.md"
-requires-python = ">3.9"
-dependencies = [
-    "questionary==2.0.1",
-    "tqdm==4.67.1"
+
+[tool.setuptools]
+packages = { find = { include = ["verdict_hasher"] } }
+
+[dependency-groups]
+dev = [
+    "markdown-exec>=1.10.0",
+    "mkdocs>=1.6.1",
+    "mkdocs-material>=9.5.50",
+    "mkdocstrings-python>=1.13.0",
+    "pytest>=8.3.4",
+    "uv>=0.5.25",
 ]
-
-[project.urls]
-repository = "https://github.com/Cyncrovee/verdict-hasher"
-documentation = "https://cyncrovee.github.io/verdict-hasher/"
-
-[tool.poetry.group.dev.dependencies]
-pytest = "6.2"
-mkdocs = "1.6.1"
-mkdocs-material = "9.5.49"
-mkdocstrings-python = "1.12.2"
-markdown-exec = "1.10.0"
-
-[build-system]
-requires = ["poetry-core==2.0.0"]
-build-backend = "poetry.core.masonry.api"
