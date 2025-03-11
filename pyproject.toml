@@ -5,7 +5,7 @@ description = "A project for file configuration and hashing"
 license = "MIT"
 authors = [
     { name = "Sigireddy Balasai", email = "SigireddyBalasai@gmail.com" },
-    { name = "Ella Hart AKA Cyncrovee", email= "86919717+Cyncrovee@user.noreply.github.com" }
+    { name = "Ella Hart AKA Cyncrovee", email= "Cyncrovee@yahoo.com" }
 ]
 readme = "README.md"
 requires-python = ">3.9"
